@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Markos generates random strings based on its database"
+    />
+    <meta name="author" content="Mohierza" />
     <title>Markos</title>
   </head>
   <body>
+    <header>
+      <h1 class="title">Markos Resurrected</h1>
+    </header>
+    <main>
+      <section class="textArea">
+        <p class="description">Add your strings to The Markos' database</p>
+        <textarea name="input" id="input" cols="60" rows="20"></textarea>
+        <button class="btn submit">Submit</button>
+        <p class="succ"></p>
+      </section>
+      <button class="btn generate">Generate!</button>
+      <p class="random"></p>
+    </main>
     <script src="markos.js"></script>
   </body>
 </html>

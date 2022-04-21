@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 const endglishDatabase = [];
 const persianDatabase = [];
-const wordAdder = (string) => {
+const wordAdder = string => {
   const words = string
     .toLowerCase()
     .split(
@@ -39,7 +39,7 @@ const wordMaker = () => {
   ) {
     selectedArray = [...endglishDatabase];
   } else if (endglishDatabase.length === 0 && persianDatabase.length === 0) {
-    return "ERR_EMPTY_DATABASES";
+    return 'ERR_EMPTY_DATABASES';
   } else if (persianDatabase.length === 0) {
     selectedArray = [...endglishDatabase];
   } else if (endglishDatabase.length === 0) {
@@ -60,7 +60,7 @@ const wordMaker = () => {
       usedIndexes.push(indexOfTheWord);
       wordsToJoin.push(selectedArray[indexOfTheWord]);
     }
-    return wordsToJoin.join(" ");
+    return wordsToJoin.join(' ');
   } else {
     let numberOfWords = Math.floor(Math.random() * 15) + 2;
     if (numberOfWords > selectedArray.length)
@@ -84,21 +84,17 @@ const wordMaker = () => {
         }
       }
     }
-    return wordsToJoin.join(" ");
+    return wordsToJoin.join(' ');
   }
 };
-
-wordAdder(`
-چرا میشه
-حتی میشه دانلود نکرد و از همون صفحه ی توی سایت شات گرفت
-نه توی اتوماسیون تغذیه رزرو میکنید و بعد تو سلفی که مشخص کردید کارت میزنید و میگیرید
-الان دوستامو کنسل میکنم که کسی که جزو دوستام نیست بین غریبه ها نمونه
-اگه تو سامانه ارور تایید مدیریت میگیرید تو بخش اطلاعات خوابگاهی دانشجو اعمال تغییرات رو بزنید تا تایید بشه
-کارت واکسن برای کسی که خوابگاه هم هست تایید نشده مشکلی نیست اون
-هزینه خوابگاه باید قبل رفتن پرداخت کنید طبق چیزی که تو دستورالعمل نوشته بود
-اگه لیستتون خالیه خوابگاه و ساختمونو از لیست بالا انتخاب کنید
-خب مگه این که مشکلی داشته باشید پرداخت نکنید وگرنه که پرداخت کنید بهتره
-فکر کنم ورود با رمزش کار نمیکنه چون حتی بعد تغییر رمز هم ارور اتمام اعتبار میده
-اتوماسیون بازه با احراز هویت ولی چیزی تعریف نشده ولی یه چند روز پیش با رمز ۱ هم میشد وارد شد اما دیگه نمیشه
-اخه اصلا چرا باید مبلغ اضافه بدیم وقتی حتی اون صد تومن سرویس خوابگاه رو هم پرداختیم بعلاوه ی اجاره ی دو ماه`);
-console.log(wordMaker());
+document.querySelector('.submit').addEventListener('click', () => {
+  wordAdder(document.querySelector('#input').value);
+  console.log(persianDatabase);
+  if (document.querySelector('#input').value)
+    document.querySelector('.succ').textContent = 'Successfully added!';
+  else if (!document.querySelector('#input').value)
+    document.querySelector('.succ').textContent = 'Please enter a string!';
+});
+document.querySelector('.generate').addEventListener('click', () => {
+  document.querySelector('.random').textContent = wordMaker();
+});

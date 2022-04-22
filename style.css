@@ -1,0 +1,209 @@
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn RD;
+  src: url('fonts/webfonts/Vazirmatn-RD-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  min-height: 100%;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+  font-family: 'Vazirmatn RD', sans-serif;
+  background: rgb(19, 18, 18);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(19, 18, 18, 1) 0%,
+    rgba(20, 29, 25, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(19, 18, 18, 1) 0%,
+    rgba(20, 29, 25, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(19, 18, 18, 1) 0%,
+    rgba(20, 29, 25, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#131212",endColorstr="#141d19",GradientType=1);
+  overflow-x: hidden;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1.3rem;
+  margin-block-end: 0.5rem;
+  width: 85vw;
+}
+body {
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgb(31, 31, 31);
+  color: rgb(60, 197, 142);
+}
+header {
+  width: 100%;
+  /* padding: 1rem; */
+}
+main {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.textArea {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+}
+.textArea #input {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 0.4em;
+  font-family: 'Vazirmatn RD', sans-serif;
+  border: 1px solid rgb(60, 197, 142);
+  border-radius: 2px;
+  background-color: transparent;
+  color: rgb(60, 197, 142);
+  resize: none;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  padding: 1rem;
+  width: 100%;
+  border: 1px solid rgb(60, 197, 142);
+  border-radius: 2px;
+  background-color: transparent;
+  color: rgb(60, 197, 142);
+  font-family: 'Vazirmatn RD', sans-serif;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+.btn::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  position: absolute;
+  /* inset: 0 0 0 0; */
+  z-index: -1;
+}
+.btn:hover::after {
+  background-color: rgb(60, 197, 142);
+  border: 1px solid rgb(60, 197, 142);
+}
+.btn:hover {
+  color: rgb(37, 37, 37);
+}
+.btn:active {
+  color: rgb(60, 197, 142);
+}
+.btn:active::after {
+  height: 0%;
+  border: none;
+  transition: none;
+}
+.succ {
+  font-size: 1.2rem;
+}
+.random {
+  margin-block: 2rem;
+  font-size: 2rem;
+  z-index: 2;
+}
+.generate {
+  margin-block-end: 2rem;
+}
+@media only screen and (min-width: 600px) {
+  body {
+    border-radius: 10px;
+    padding: 3rem;
+  }
+}

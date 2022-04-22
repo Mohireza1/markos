@@ -10,20 +10,24 @@
     />
     <meta name="author" content="Mohierza" />
     <title>Markos</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <h1 class="title">Markos Resurrected</h1>
+      <h2 class="description">
+        Add your strings to The Markos' database to get a new random string
+      </h2>
     </header>
     <main>
       <section class="textArea">
-        <p class="description">Add your strings to The Markos' database</p>
-        <textarea name="input" id="input" cols="60" rows="20"></textarea>
-        <button class="btn submit">Submit</button>
+        <textarea name="input" id="input" dir="auto" rows="7"></textarea>
         <p class="succ"></p>
+        <button class="btn submit">Submit</button>
       </section>
+      <p class="random" dir="auto"></p>
       <button class="btn generate">Generate!</button>
-      <p class="random"></p>
+      <button class="btn clear">Clear database</button>
     </main>
     <script src="markos.js"></script>
   </body>
